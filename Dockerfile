@@ -1,8 +1,9 @@
 FROM golang:alpine as builder
-
+RUN apk add build-base
 COPY . /code
 WORKDIR /code
 
+RUN go mod init github.com/pinky216/jenkins-pipeline-tutorial
 # Run unit tests
 RUN go test
 
